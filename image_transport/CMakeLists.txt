@@ -67,3 +67,10 @@ install(TARGETS list_transports republish
 install(FILES default_plugins.xml
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+# Tests
+if(CATKIN_ENABLE_TESTING AND NOT ANDROID)
+  find_package(rostest REQUIRED)
+  catkin_add_gtest(image_transport_test test/image_transport.cpp)
+  target_link_libraries(image_transport_test ${PROJECT_NAME} ${catkin_LIBRARIES})
+endif()
