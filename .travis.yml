@@ -2,10 +2,8 @@ sudo: required
 dist: trusty
 language: generic
 env:
-  - OPENCV_VERSION=2 ROS_DISTRO=indigo
-  - OPENCV_VERSION=3 ROS_DISTRO=indigo
-  - OPENCV_VERSION=2 ROS_DISTRO=jade
-  - OPENCV_VERSION=3 ROS_DISTRO=jade
+  - OPENCV_VERSION=3 ROS_DISTRO=kinetic
+  - OPENCV_VERSION=3 ROS_DISTRO=melodic
 # Install system dependencies, namely ROS.
 before_install:
   # Define some config vars.
@@ -20,7 +18,7 @@ before_install:
   - wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
   - sudo apt-get update -qq &>/dev/null
   # Install ROS
-  - sudo apt-get install -qq -y python-catkin-pkg python-catkin-tools python-rosdep python-wstool ros-$ROS_DISTRO-catkin >/dev/null
+  - sudo apt-get install -qq -y python-catkin-pkg python-catkin-tools python-rosdep python-wstool ros-$ROS_DISTRO-catkin ros-$ROS_DISTRO-image-transport-plugins >/dev/null
   - source /opt/ros/$ROS_DISTRO/setup.bash
   # Setup for rosdep
   - sudo rosdep init
