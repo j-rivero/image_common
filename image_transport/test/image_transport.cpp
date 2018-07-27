@@ -85,8 +85,8 @@ void CHECK_TOTAL_NUMBER_OF_TOPICS(const int number_to_check)
        topic_count = topic_count + 3;
    }
 
-   // rosout and rosout_agg out. topics expected + 3 *
-   EXPECT_EQ(master_topics.size() - 2, number_to_check * topic_count);
+   // rostest topic out. topics expected + 3 *
+   EXPECT_EQ(master_topics.size() - 1, number_to_check * topic_count);
 }
 
 TEST(ImageTransport, constructor_destructor)

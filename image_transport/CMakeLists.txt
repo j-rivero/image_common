@@ -71,6 +71,6 @@ install(FILES default_plugins.xml
 # Tests
 if(CATKIN_ENABLE_TESTING AND NOT ANDROID)
   find_package(rostest REQUIRED)
-  catkin_add_gtest(image_transport_test test/image_transport.cpp)
+  add_rostest_gtest(image_transport_test test/image_transport.test test/image_transport.cpp)
   target_link_libraries(image_transport_test ${PROJECT_NAME} ${catkin_LIBRARIES})
 endif()
