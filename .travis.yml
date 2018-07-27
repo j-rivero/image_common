@@ -3,7 +3,6 @@ dist: xenial
 language: generic
 env:
   - OPENCV_VERSION=3 ROS_DISTRO=kinetic
-  - OPENCV_VERSION=3 ROS_DISTRO=melodic
 # Install system dependencies, namely ROS.
 before_install:
   # Define some config vars.
