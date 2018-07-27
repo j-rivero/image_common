@@ -9,6 +9,7 @@ find_package(catkin REQUIRED
     roscpp
     roslib
     sensor_msgs
+    cv_bridge
 )
 
 find_package(Boost REQUIRED)
@@ -73,4 +74,6 @@ if(CATKIN_ENABLE_TESTING AND NOT ANDROID)
   find_package(rostest REQUIRED)
   catkin_add_gtest(image_transport_test test/image_transport.cpp)
   target_link_libraries(image_transport_test ${PROJECT_NAME} ${catkin_LIBRARIES})
+  catkin_add_gtest(message_passing_test test/message_passing.cpp)
+  target_link_libraries(message_passing_test ${PROJECT_NAME} ${catkin_LIBRARIES})
 endif()
